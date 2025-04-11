@@ -1,0 +1,58 @@
+{
+  "UserList": [
+    {
+      "firstName": "Omar Guthrie ",
+      "lastName": "Kirby",
+      "userName": "zadov",
+      "city": "Est tempore alias d",
+      "state": "Aliquid elit velit",
+      "zipCode": "39021",
+      "id": "22a2"
+    },
+    {
+      "firstName": "Marshall Arm",
+      "lastName": "Koch",
+      "userName": "fygyj",
+      "city": "Sit expedita molliti",
+      "state": "Et accusamus molesti",
+      "zipCode": "88953",
+      "id": "b896"
+    },
+    {
+      "id": "c6cd",
+      "firstName": "Sybill Ford",
+      "lastName": "Nixon",
+      "userName": "cuxakawu",
+      "city": "Natus nemo maiores v",
+      "state": "Alias deserunt error",
+      "zipCode": "44978"
+    },
+    {
+      "id": "f13b",
+      "firstName": "Marvin Kidd",
+      "lastName": "Hughes",
+      "userName": "gapuqiru",
+      "city": "Sed nulla dolor ut d",
+      "state": "In facere ipsum rem ",
+      "zipCode": "90976"
+    },
+    {
+      "id": "0ecc",
+      "firstName": "Declan Davenport",
+      "lastName": "Lott",
+      "userName": "fuwecy",
+      "city": "Est in qui id offici",
+      "state": "Earum perferendis ar",
+      "zipCode": "34014"
+    },
+    {
+      "id": "9005",
+      "firstName": "Zelda Nixon",
+      "lastName": "Richardson",
+      "userName": "mysaqahof",
+      "city": "Magnam commodo omnis",
+      "state": "Minus rem ex et perf",
+      "zipCode": "43901"
+    }
+  ]
+}

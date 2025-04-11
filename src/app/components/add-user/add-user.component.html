@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="addUserForm">
+            <div class="mb-2 mt-4 col-12 col-md-6 m-auto">
+                <label for="fname" class="label-control">First Name</label>
+                <input type="text" name="fname" class="form-control" formControlName="firstName">
+            </div>
+            <div class="mb-2 col-12 col-md-6 m-auto">
+                <label for="lname" class="label-control">Last Name</label>
+                <input type="text" name="lname" id="lname" class="form-control" formControlName="lastName">
+            </div>
+            <div class="mb-2 col-12 col-md-6 m-auto">
+                <label for="userName" class="label-control">UserName</label>
+                <input type="text" name="userName" id="userName" class="form-control" formControlName="userName">
+            </div>
+            <div class="mb-2 col-12 col-md-6 m-auto">
+                <label for="city" class="label-control">City</label>
+                <input type="text" name="city" id="city" class="form-control" formControlName="city">
+            </div>
+            <div class="mb-2 col-12 col-md-6 m-auto">
+                <label for="state" class="label-control">State</label>
+                <input type="text" name="state" id="state" class="form-control" formControlName="state">
+            </div>
+            <div class="mb-2 col-12 col-md-6 m-auto">
+                <label for="zipCode" class="label-control">Zip Code</label>
+                <input type="text" name="zipCode" id="zipCode" class="form-control" formControlName="zipCode">
+            </div>
+            <div class="mb-2 col-12 col-md-6 m-auto d-flex justify-content-between">
+                @if(!isEdit){
+                <button type="submit" (click)="onSubmite()" class="btn btn-success">Submit</button>
+                } @else {
+                <button (click)="onUpdate()" class="btn btn-warning">Update</button>
+                }
+                <button (click)="onCancle()" class="btn btn-secondary">Cancle</button>
+            </div>
+        </form>
+    </div>
+</div>
