@@ -1,14 +1,26 @@
-<nav>
-    <div class="d-flex justify-content-between bg-success text-white p-3 align-items-center">
-        <div>
-            <h3>User Management System</h3>
+<div class="bg-success text-white">
+    <nav class="m-auto" style="max-width: 1440px;">
+        <div class="navbar navbar-expand-lg d-flex justify-content-between  p-3 align-items-center">
+            <div>
+                <h3>User Management System</h3>
+            </div>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto d-flex justify-content-center align-items-center list-unstyled align-items-center">
+                    <li class="nav-item mt-4 md-lg-0">
+                        <a class="nav-link text-white" routerLink="">Home</a>
+                    </li>
+                    <li class="nav-item ms-0 ms-lg-5 mt-4 md-lg-0">
+                        <a class="nav-link text-white" routerLink="/adduser" routerLinkActive="active">Add User</a>
+                    </li>                    
+                </ul>
+            </div>
         </div>
-        <div class="">
-            <ul class="d-flex list-unstyled align-items-center">
-                <li class="" routerLink="">Home</li> 
-                <li class="ms-5 " routerLink="/adduser" routerLinkActive="active">Add User</li> 
-            </ul>
-        </div>
-    </div>
-    <h3 class="d-flex justify-content-center">User Management System Using JSON Server</h3>
-</nav>
+    </nav>
+</div>
+<div>
+    <h3 class="d-flex justify-content-center mt-1 mt-md-3 p-3">User Management System Using JSON Server</h3>
+</div>

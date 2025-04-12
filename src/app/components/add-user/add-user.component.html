@@ -1,29 +1,74 @@
-<div class="container">
+<div class="container overflow-auto w-100">
     <div class="row">
+        @if(message){
+            <div class="text text-danger m-auto border rounded p-2 w-25 d-flex justify-content-center align-item-center " style="background-color: antiquewhite;">
+                {{message}}
+            </div>
+        }
         <form [formGroup]="addUserForm">
             <div class="mb-2 mt-4 col-12 col-md-6 m-auto">
-                <label for="fname" class="label-control">First Name</label>
-                <input type="text" name="fname" class="form-control" formControlName="firstName">
+                <label for="firstName" class="label-control">First Name</label>
+                <input type="text" name="firstName" class="form-control" formControlName="firstName">
+                @if(addUserForm.controls['firstName'].hasError('required') &&
+                addUserForm.controls['firstName'].touched){
+                <span class="text text-danger">First Name is required</span>
+                } @else if(addUserForm.controls['firstName'].hasError('minlength')){
+                <span class="text text-danger">First Name atleast 3 character</span>
+                }
+                @else if(addUserForm.controls['firstName'].hasError('pattern')){
+                <span class="text text-danger">First Name must contain only letters</span>
+                }
             </div>
             <div class="mb-2 col-12 col-md-6 m-auto">
-                <label for="lname" class="label-control">Last Name</label>
-                <input type="text" name="lname" id="lname" class="form-control" formControlName="lastName">
+                <label for="lastName" class="label-control">Last Name</label>
+                <input type="text" name="lastName" id="lastName" class="form-control" formControlName="lastName">
+                @if(addUserForm.controls['lastName'].hasError('required') &&
+                addUserForm.controls['lastName'].touched){
+                <span class="text text-danger">Last Name is required</span>
+                } @else if(addUserForm.controls['lastName'].hasError('minlength')){
+                <span class="text text-danger">Last Name atleast 3 character</span>
+                }
+                @else if(addUserForm.controls['lastName'].hasError('pattern')){
+                <span class="text text-danger">Last Name must contain only letters</span>
+                }
             </div>
             <div class="mb-2 col-12 col-md-6 m-auto">
                 <label for="userName" class="label-control">UserName</label>
                 <input type="text" name="userName" id="userName" class="form-control" formControlName="userName">
+                @if(addUserForm.controls['userName'].hasError('required') && addUserForm.controls['userName'].touched){
+                <span class="text text-danger">UserName is required</span>
+                } @else if(addUserForm.controls['userName'].hasError('pattern')){
+                <span class="text text-danger">UserName must contain only letters and numbers</span>
+                }
             </div>
             <div class="mb-2 col-12 col-md-6 m-auto">
                 <label for="city" class="label-control">City</label>
                 <input type="text" name="city" id="city" class="form-control" formControlName="city">
+                @if(addUserForm.controls['city'].hasError('required') && addUserForm.controls['city'].touched){
+                <span class="text text-danger">city is required</span>
+                } @else if(addUserForm.controls['city'].hasError('pattern')){
+                <span class="text text-danger">City must contain only letters</span>
+                }
             </div>
             <div class="mb-2 col-12 col-md-6 m-auto">
                 <label for="state" class="label-control">State</label>
                 <input type="text" name="state" id="state" class="form-control" formControlName="state">
+                @if(addUserForm.controls['state'].hasError('required') && addUserForm.controls['state'].touched){
+                <span class="text text-danger">State is required</span>
+                } @else if(addUserForm.controls['state'].hasError('pattern')){
+                <span class="text text-danger">State must contain only letters and spaces</span>
+                }
             </div>
             <div class="mb-2 col-12 col-md-6 m-auto">
                 <label for="zipCode" class="label-control">Zip Code</label>
                 <input type="text" name="zipCode" id="zipCode" class="form-control" formControlName="zipCode">
+                @if(addUserForm.controls['zipCode'].hasError('required') &&
+                addUserForm.controls['zipCode'].touched){
+                <span class="text text-danger">ZIP Code is required</span>
+                }
+                @else if(addUserForm.controls['zipCode'].hasError('pattern')){
+                <span class="text text-danger">ZIP Code must be exactly 5 digits and contain only numbers</span>
+                }
             </div>
             <div class="mb-2 col-12 col-md-6 m-auto d-flex justify-content-between">
                 @if(!isEdit){

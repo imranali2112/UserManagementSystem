@@ -41,27 +41,31 @@
         </tbody>
     </table> -->
 </div>
-
+@if(message){
+    <div class="text text-danger m-auto border rounded p-2 w-25 d-flex justify-content-center align-item-center " style="background-color: antiquewhite;">
+        {{message}}
+    </div>
+}
 <div class="container">
-    <div class="row">
+    <div class="row" >
         @for(data of apiData; track data){
         <div class="col-12 col-md-6 col-lg-4 p-4">
-            <div class="row card p-3">
+            <div class="row card border-1 p-3" style="background-color: rgb(255, 250, 241);">
                 <div class=" col card-body m-0 p-0">
-                    <h4 class="title w-50 m-auto mb-2">hello user</h4>
-                    <p class="card-text"><strong>Frist Name:</strong> {{data.firstName}}</p>
-                    <p class="card-text"><strong>Last Name:</strong> {{data.lastName}}</p>
-                    <p class="card-text"><strong>User Name: </strong> &#64;{{data.userName}}</p>
-                    <p class="card-text"><strong>City:</strong> {{data.city}}</p>
-                    <p class="card-text"><strong>State:</strong> {{data.state}}</p>
-                    <p class="card-text"><strong>Zip Code:</strong> {{data.zipCode}}</p>
+                    <h4 class="title w-50 m-auto mb-2" style="color: #f8c2a6">User Details</h4>
+                    <p class="card-text d-flex"><strong style="min-width: 120px;">Frist Name:</strong> {{data.firstName}}</p>
+                    <p class="card-text d-flex"><strong style="min-width: 120px;">Last Name:</strong> {{data.lastName}}</p>
+                    <p class="card-text d-flex"><strong style="min-width: 120px;">User Name: </strong>{{data.userName}}</p>
+                    <p class="card-text d-flex"><strong style="min-width: 120px;">City:</strong> {{data.city}}</p>
+                    <p class="card-text d-flex"><strong style="min-width: 120px;">State:</strong> {{data.state}}</p>
+                    <p class="card-text d-flex"><strong style="min-width: 120px;">Zip Code:</strong> {{data.zipCode}}</p>
                 </div>
-                <div class="d-flex justify-content-around">
-                    <button class="btn btn-warning mt-2" (click)="onUpdate(data.id)">Update</button> 
-                    <button class="btn btn-danger mt-2" (click)="onDelete(data.id)">Delete</button>
+                <div class="d-flex justify-content-end mt-3">
+                    <button  class="btn btn-outline-warning mt-2" (click)="onUpdate(data.id)">Update</button> 
+                    <button class="btn btn-outline-danger mt-2 ms-3" (click)="onDelete(data.id)">Delete</button>
                 </div>
             </div>
         </div>
-        }
-    </div>
+        }  
 </div>
+

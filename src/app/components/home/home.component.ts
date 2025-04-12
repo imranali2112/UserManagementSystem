@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   apiData: UserData[]=[];
+  message: string = '';
 
   constructor(private curd: JsonCurdService, private router : Router) {}
 
@@ -30,17 +31,20 @@ export class HomeComponent {
   }
 
   onUpdate(id: number){
-    const nav = this.router.navigate(['/adduser', id]) 
-    
-  }
+    this.router.navigate(['/adduser', id]);
+  } 
+
 
   onDelete(id: number){
-    this.curd.deleteData(id).subscribe(res =>{
-      this.getAllData();
-    });
-  }
-
-  onView(id: number){
-    this.router.navigate(['/viewuser', id])
+    if(confirm("Are you sure you want to delete this user?")){
+      this.curd.deleteData(id).subscribe(res =>{
+        this.getAllData();
+        this.message = "User is deleted successfully!";
+      });
+      setTimeout(() => {
+        this.message = '';
+      }, 2000);
+    }
+   
   }
 }
